@@ -271,12 +271,12 @@ async def download(gdrive, service, uri=None):
             await check_progress_for_dl(gid=new_gid,
                                         event=gdrive, previous=None)
         for root, dirs, files in os.walk('.'):
-            for entry in files:
-                if File.name == entry:
-                    required_file_name = join(root, entry)
-            for entry in dirs:
-                if File.name == entry:
-                    required_file_name = join(root, entry)
+            for f in files:
+                if File.name == f:
+                    required_file_name = join(root, f)
+            for directories in dirs:
+                if File.name == directories:
+                    required_file_name = join(root, directories)
     else:
         try:
             current_time = time.time()
