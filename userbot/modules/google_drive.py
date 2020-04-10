@@ -295,6 +295,7 @@ async def download(gdrive, service, uri=None):
     except AttributeError:
         return await gdrive.edit(
             "`[ENTRY - ERROR]`\n\n"
+            f" • `Name   :` {file_name}\n"
             " • `Status :` **BAD**\n"
             " • `Reason :` Replied entry is not media/file it's a messages."
         )
